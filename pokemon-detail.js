@@ -116,6 +116,77 @@ const detailMainElement = document.querySelector(".detail-main");
     setElementStyle([detailMainElement], "borderColor",
     color);
 
-    setElementStyle(document.querySelector)
+    setElementStyle(document.querySelectorAll(".power-wrapper > p"),
+        "backgroundColor",
+        color
+    );
 
+    setElementStyle(document.querySelectorAll(".stats-wrap p.stats"),
+        "color",
+        color
+    );
+
+    setElementStyle(document.querySelectorAll(".stats-wrap .progress-bar"),
+        "color",
+        color
+    );
+
+    const rgbaColor = rgbaFromHex(color);
+    const styleTag = document.createElement("style");
+styleTag.innerHTML = `. stats-wrap progress-bar::-webkit-progress-bar {
+    background-color: rgba(${rgbaColor}, 0.5)
+}`;
+
+styleTag.innerHTML = `. stats-wrap progress-bar::-webkit-progress-bar {
+    background-color:${color};
+}`;
+
+document.head.appendChild(styleTag);
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+}
+
+function createAndppendElement(parent, tag, options = {}){
+    const element = document.createElement(tag);
+    Object.keys(options).forEach((key) => {
+        element[key] = options[key];
+    });
+
+    parent.appendChild(element);
+    return element;
+}
+
+function displayPokemonsDetails(pokemon) {
+    const { name, id, types, weight, height, abilities, stats } = pokemon;
+    const capitalizePokemonName = capitalizeFirstLetter(name);
+
+    document.querySelector("title").textContent = capitalizePokemonName;
+
+    const detailMainElement = document.querySelector("detail-main");
+    detailMainElement.classList.add(name.toLowerCase());
+
+        document.querySelector("name-wrap .nome").textContent = capitalizePokemonName;
+
+        document.querySelector(".pokemon-id-wrap .body2-fonts").textContent = `#${String(id).padStart(3, "0")}`;
+
+        const imageElement = document.querySelector(".detail-img-wrapper img");
+        imageElement.src =`https://raw.githubusercontent.com/pokeapi/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`
+
+        const typeWrapper = document.querySelector(".power-wrapper");
+        typeWrapper.innerHTML = "";
+        types.forEach(({ type }) => {
+            createAndppendElement(typeWrapper, "p", {
+                className: `body3-fonts type ${type.name}`,
+                textContent:type.name,
+            });
+        });
+
+        document.querySelector(".pokemon-detail-wrap .pokemon-detail p.body-fonts.weight").textContent = `${weight / 10} kg`;
+        document.querySelector(".pokemon-detail-wrap .pokemon-detail p.body-fonts.height").textContent = `${height / 10} kg`;
+
+        const abilitiesWrapper = document.querySelector(".pokemon-detail-wrap .pokemon-detai-move"
+        );
+        
 }
