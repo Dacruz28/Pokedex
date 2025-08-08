@@ -24,7 +24,7 @@ async function fetchPokemonDataBeforeRedirect(id){
             fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`).then((res) =>
             res.json()
         ),    
-    ])
+    ]);
     return true
     } catch (error){
         console.error("falha a o fetch pokemon data before redirect");
