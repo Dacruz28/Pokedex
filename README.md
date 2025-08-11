@@ -1,0 +1,1 @@
+Um aplicativo web responsivo que lista os 151 primeiros Pokémon, usando HTML, CSS e JavaScript. Busca dados e detalhes diretamente da API pública, exibindo informações como tipos, habilidades, estatísticas e descrições. Interface intuitiva com navegação entre Pokémons e filtro simples.
