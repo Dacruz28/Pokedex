@@ -1,5 +1,20 @@
 let currentPokemonId = null;
 
+const leftArrow = document.querySelector("#leftArrow");
+const rightArrow = document.querySelector("#rightArrow");
+
+function handleLeftArrowClick() {
+    if (currentPokemonId > 1) {
+        navigatePokemon(currentPokemonId - 1);
+    }
+}
+
+function handleRightArrowClick() {
+    if (currentPokemonId < 151) {
+        navigatePokemon(currentPokemonId + 1);
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const MAX_POKEMONS = 151;
     const pokemonID = new URLSearchParams(window.location.search).get("id");
@@ -10,9 +25,13 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
+    leftArrow.addEventListener("click", handleLeftArrowClick);
+    rightArrow.addEventListener("click", handleRightArrowClick);
+
     currentPokemonId = id;
     loadPokemon(id);
 });
+
 
 async function loadPokemon(id) {
     try {
@@ -33,17 +52,6 @@ async function loadPokemon(id) {
         const [leftArrow, rightArrow] = ['#leftArrow', '#rightArrow'].map(
             (sel) => document.querySelector(sel)
         );
-
-        leftArrow.removeEventListener("click", navigatePokemon);
-        rightArrow.removeEventListener("click", navigatePokemon);
-
-        if (id !== 1) {
-            leftArrow.addEventListener("click", () => navigatePokemon(id - 1));
-        }
-
-        if (id !== 151) {
-            rightArrow.addEventListener("click", () => navigatePokemon(id + 1));
-        }
 
         window.history.pushState({}, "", `./detail.html?id=${id}`);
         return true;
@@ -210,9 +218,22 @@ function setTypeBackgroundColor(pokemon) {
 
     setElementStyle([detailMainElement], "backgroundColor", color);
     setElementStyle([detailMainElement], "borderColor", color);
-    setElementStyle(document.querySelectorAll(".power-wrapper > p"), "backgroundColor", color);
+
+    // 👉 Aplique também ao body e html
+    document.body.style.backgroundColor = color;
+    document.documentElement.style.backgroundColor = color;
+
+    document.querySelectorAll(".power-wrapper > p").forEach((el) => {
+        const typeClass = el.classList.contains("type") ? el.classList[2] : null;
+        if (typeClass && typeColors[typeClass]) {
+            el.style.backgroundColor = typeColors[typeClass];
+        }
+    });
+
     setElementStyle(document.querySelectorAll(".stats-wrap p.stats"), "color", color);
     setElementStyle(document.querySelectorAll(".stats-wrap .progress-bar"), "color", color);
+
+    setElementStyle(document.querySelectorAll(".about-text"), "color", color);
 
     const rgbaColor = rgbaFromHex(color);
 
@@ -228,3 +249,7 @@ function setTypeBackgroundColor(pokemon) {
     `;
     document.head.appendChild(styleTag);
 }
+
+
+
+

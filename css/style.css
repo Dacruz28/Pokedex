@@ -1,0 +1,251 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #dc0a2d;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.container-pokedex {
+  background-color: #dc0a2d;
+  border: 6px solid #dc0a2d; 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+
+.header-home {
+  background-color: #dc0a2d;
+  padding: 16px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-wrapper {
+  display: flex;
+  align-items: center;     
+  justify-content: space-between;
+  gap: 10px;               
+  margin-top: 10px;
+  padding: 0px 10px 10px 10px;
+}
+
+.search-wrap {
+width: 90%;
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 25px;
+  padding: 5px 10px;
+
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  padding: 8px;
+  border-radius: 25px;
+  outline: none;
+
+}
+
+.search-icon,
+.search-close-icon {
+  width: 20px;
+  height: 20px;
+  margin: 0 8px;
+}
+
+.sort-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-wrap {
+  display: flex;
+  gap: 10px;
+}
+
+.pokemon-list {
+  flex: 1;
+  overflow-y: auto;
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 20px;
+}
+
+.list-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 20px;
+}
+
+
+.img-wrap {
+    position: relative;
+  width: 150px;
+  height: 150px;
+  display: flex;
+flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #ffffff, #d1d1d1);
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 6px rgba(0, 0, 2, 0.35); 
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.img-wrap:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); 
+}
+
+.img-wrap img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+.number-wrap {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+}
+
+.caption-fonts {
+  font-size: 12px;
+  color: #888;
+  margin: 0;
+}
+
+.name-wrap {
+  width: 100%;
+  background-color: #f2f2f2;
+  text-align: center;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 5px 0;
+  margin-top: auto;
+}
+
+.body3-fonts {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.pokemon-id {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+}
+
+.pokemon-name {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+#not-found-message {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;  
+  font-size: 1.5rem;
+  color: #666;
+  text-align: center;
+  gap: 1rem;
+}
+#not-found-message img {
+  width: 150px;
+  opacity: 0.6;
+}
+#not-found-message button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #e3350d;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+#not-found-message button:hover {
+  background-color: #c22a09;
+}
+
+
+/* modal */
+.filter-button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: white;
+  color: #dc0a2d;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.filter-button:hover {
+  background-color: #f5f5f5;
+  transform: scale(1.05);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+  width: 280px;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+
+

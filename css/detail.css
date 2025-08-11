@@ -1,0 +1,278 @@
+/* ========== LAYOUT PRINCIPAL ========== */
+.detail-main {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #2d2d2d;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+
+}
+
+
+/* ========== HEADER ========== */
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 1.5rem 0 1.5rem;
+  color: white;
+}
+
+.back-btn {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.name-wrap h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  color: white;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.pokemon-id-wrap p {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* ========== IMAGEM DESTACADA ========== */
+.featured-img {
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+}
+
+.detail-img-wrapper img {
+  width: 180px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  border-radius: 50%;
+  padding: 5px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-arrow {
+  left: 16px;
+}
+
+.right-arrow {
+  right: 16px;
+}
+
+/* ========== TIPO DE POKEMON ========== */
+.power-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.power-wrapper .type {
+  padding: 6px 16px;
+  border-radius: 20px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+/* ========== DETALHES DO POKÉMON ========== */
+.detail-card-detail-wrapper {
+  background: white;
+  padding: 2rem 1.5rem 3rem 1.5rem;
+  border-radius: 24px 24px 0 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-text {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.pokemon-detail-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.pokemon-detail-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 80px;
+  text-align: center;
+  position: relative;
+}
+
+.pokemon-detail-wrap:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -16px;
+  top: 25%;
+  height: 50%;
+  width: 1px;
+  background-color: #ccc;
+}
+
+.pokemon-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.caption-fonts {
+  color: #999;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+
+.pokemon-detail img {
+  width: 18px;
+  height: 18px;
+  opacity: 0.7;
+}
+
+.pokemon-detail.move {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+}
+
+.pokemon-detail.move p {
+  margin: 0;
+}
+
+.pokemon-description {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.base-stats-title,
+.about-text + .pokemon-description + .body2-fonts {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #7AC74C;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+/* ========== BARRAS DE STATUS ========== */
+.stats-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0;
+  position: relative; 
+}
+
+.stats-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stats-wrap p.stats {
+  width: 50px;
+  font-weight: bold;
+  text-align: right;
+  padding-right: 12px; 
+  border-right: none; 
+}
+
+.stats-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 62px; 
+  width: 2px;
+  background-color: rgba(0, 0, 0, 0.1); 
+  border-radius: 2px;
+}
+
+.stats-wrap p.body3-fonts {
+  width: 30px;
+  text-align: right;
+    margin-left: 12px;
+
+}
+
+.progress-bar {
+  flex: 1;
+  height: 6px;
+  border-radius: 4px;
+  background-color: #eee;
+}
+
+
+.progress-bar::-webkit-progress-bar {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.progress-bar::-webkit-progress-value {
+  background-color: #7AC74C;
+  border-radius: 10px;
+}
+
+/* ========== BACKGROUND SUTIL ========== */
+.detail-bg {
+  position: absolute;
+  top: 60px;
+  right: 5,00px;
+  width: 300px;
+  opacity: 0.07;
+  z-index: 0;
+  pointer-events: none;
+  
+}
+
+/* ========== RESPONSIVO ========== */
+@media (max-width: 480px) {
+  .pokemon-detail-wrapper {
+    justify-content: center;
+  }
+
+  .stats-wrap p.stats {
+    width: 40px;
+  }
+}
+

@@ -6,6 +6,7 @@
     <title>Pokemon detalhes</title>
 </head>
 <script src="./pokemon-detail.js" defer></script>
+<link rel="stylesheet" href="/css/detail.css">
 <body>
     <main class="detail-main main">
         <header class="header">
@@ -39,34 +40,35 @@
                 <p class="body3-fonts type grass"></p>
                 <p class="body3-fonts type poison"></p>
             </div>
-            <p class="body2-fonts about-text">About</p>
-                <div class="pokemon-detail-wrapper">
-                    <div class="pokemon-detail-wrap">
-                        <div class="pokemon-detail">
-                            <img src="./assets/weight.svg" alt="weight">
-                            <p class="body3-fonts weight"></p>
-                        </div>
-                        <p class="caption-fonts">Weight</p>
-                    </div>
-
-                    <div class="pokemon-detail-wrapper">
-                    <div class="pokemon-detail-wrap">
-                        <div class="pokemon-detail">
-                            <img src="./assets/weight.svg" alt="height" class="straighten">
-                            <p class="body3-fonts height"></p>
-                        </div>
-                        <p class="caption-fonts">Height</p>
-                    </div>
-
-                    <div class="pokemon-detail-wrap">
-                        <div class="pokemon-detail move">
-                            <p class="caption-fonts">Move</p>
-
-                        </div>
-                    </div>
+            <div class="about-section">
+<p class="body2-fonts about-text type-colored">Sobre</p>
+  <div class="pokemon-detail-wrapper">
+    <div class="pokemon-detail-wrap">
+      <div class="pokemon-detail">
+        <img src="./assets/weight.svg" alt="weight">
+        <p class="body3-fonts weight">6.9 kg</p>
+      </div>
+      <p class="caption-fonts">Peso</p>
+    </div>
+    <div class="pokemon-detail-wrap">
+      <div class="pokemon-detail">
+        <img src="./assets/height.svg" alt="height" class="straighten">
+        <p class="body3-fonts height">0.7 m</p>
+      </div>
+      <p class="caption-fonts">Altura</p>
+    </div>
+    <div class="pokemon-detail-wrap">
+      <div class="pokemon-detail move">
+        <p class="body3-fonts"></p>
+        <p class="body3-fonts"></p>
+      </div>
+      <p class="caption-fonts">Movimentos</p>
+    </div>
+  </div>
+</div>
                     
                     <p class="body3-fonts pokemon-description"></p>
-                    <p class="body2-fonts about-text">Base stats</p>
+                    <p class="body2-fonts about-text">Estatísticas básicas</p>
 
                     <div class="stats-wrapper">
                         <div class="stats-wrap" data-stat="HP">
